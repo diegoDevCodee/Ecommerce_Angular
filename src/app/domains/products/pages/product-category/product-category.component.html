@@ -1,0 +1,13 @@
+<ul class="flex justify-between mx-auto">
+  <li class="px-2 rounded-3xl flex justify-center items-center bg-slate-300"><a routerLink="/">All</a></li>
+  @for (category of categories; track $index) {
+  <li class="px-2 rounded-3xl flex justify-center items-center bg-slate-300">
+    <a
+      routerLink="/"
+      [queryParams]="{ category_id: category.id }"
+      class="text-sm"
+      >{{ category.name }}</a
+    >
+  </li>
+  }
+</ul>

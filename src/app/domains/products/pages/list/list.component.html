@@ -1,0 +1,12 @@
+<h3>{{ products().length }}</h3>
+<app-product-category [categories]="categories()"/>
+<div class="grid grid-cols-4 gap-4 mt-5">
+  @for (product of products(); track product.id) {
+  <app-product [product]="product" (addToCart)="addToCart($event)" />
+  }
+
+  <!-- [title]="'Product 1'"
+  [price]="12"
+  img="https://picsum.photos/640/640?r=23"
+  (addToCart)="fromChild($event)" -->
+</div>
